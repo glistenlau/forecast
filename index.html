@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="/forecast/static/index.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.js"></script>
+    <script src="http://openlayers.org/api/OpenLayers.js"></script>
+    <script src="/forecast/static/index.js"></script>
+
+    <title>Forecast Search</title>
+</head>
+<body>
+<h2 align="center">Forecast Search</h2>
+<div id="search">
+    <form name="searchForm" id="searchForm" role="form" action="javascript:alert('success!')" method="get">
+        <div class="row no-gutter">
+            <div class="form-group col-xs-12 col-md-3">
+                <label class="control-label" for="streetAddress">Street Address:<span class="required">*</span></label>
+                <input type="text" class="form-control" name="streetAddress" id="streetAddress" placeholder="Enter street address"/>
+            </div>
+            <div class="form-group col-xs-12 col-md-2">
+                <label class="control-label" for="city">City:<span class="required">*</span></label>
+                <input type="text" class="form-control" name="city" id="city" placeholder="Enter the city name"/>
+            </div>
+            <div class="form-group col-xs-12 col-md-2">
+                <label class="control-label" for="state">State:<sapn class="required">*</sapn></label>
+                <select id="state" name="state" class="form-control">
+                    <option value="">Select your state...</option>
+                    <option value="AL">Alabama</option>
+                    <option value="AK">Alaska</option>
+                    <option value="AZ">Arizona</option>
+                    <option value="AR">Arkansas</option>
+                    <option value="CA">California</option>
+                    <option value="CO">Colorado</option>
+                    <option value="CT">Connecticut</option>
+                    <option value="DE">Delaware</option>
+                    <option value="DC">District of Columbia</option>
+                    <option value="FL">Florida</option>
+                    <option value="GA">Georgia</option>
+                    <option value="HI">Hawaii</option>
+                    <option value="ID">Idaho</option>
+                    <option value="IL">Illinois</option>
+                    <option value="IN">Indiana</option>
+                    <option value="IA">Iowa</option>
+                    <option value="KS">Kansas</option>
+                    <option value="KY">Kentucky</option>
+                    <option value="LA">Louisiana</option>
+                    <option value="ME">Maine</option>
+                    <option value="MD">Maryland</option>
+                    <option value="MA">MI</option>
+                    <option value="MI">Michigan</option>
+                    <option value="MN">Minnesota</option>
+                    <option value="MS">Mississippi</option>
+                    <option value="MO">Missouri</option>
+                    <option value="MT">Montana</option>
+                    <option value="NE">Nebraska</option>
+                    <option value="NV">Nevada</option>
+                    <option value="NH">New Hampshire</option>
+                    <option value="NJ">New Jersey</option>
+                    <option value="NM">New Mexico</option>
+                    <option value="NY">New York</option>
+                    <option value="NC">North Carolina</option>
+                    <option value="ND">North Dakota</option>
+                    <option value="OH">Ohio</option>
+                    <option value="OK">Oklahoma</option>
+                    <option value="OR">Oregon</option>
+                    <option value="PA">Pennsylvania</option>
+                    <option value="RI">Rhode Island</option>
+                    <option value="SC">South Carolina</option>
+                    <option value="SD">South Dakota</option>
+                    <option value="TN">Tennessee</option>
+                    <option value="TX">Texas</option>
+                    <option value="UT">Utah</option>
+                    <option value="VT">Vermont</option>
+                    <option value="VA">Virginia</option>
+                    <option value="WA">Washington</option>
+                    <option value="WV">West Virginia</option>
+                    <option value="WI">Wisconsin</option>
+                    <option value="WY">Wyoming</option>
+                </select>
+            </div>
+            <div class="form-group col-xs-12 col-md-2">
+                <div class="row" style="padding-left: 8px;">
+                    <div class="form-group hidden-xs col-md-12" style="margin: 0;padding: 0;height: 8px"></div>
+                    <div class="col-xs-12 col-md-12">
+                        <label class="control-label">Degree:</label>
+                    </div>
+                    <div class="form-group col-xs-12 col-md-12">
+                        <input type="radio" name="degreeType" value="us" checked="checked" />  Fahrenheit
+                        <input type="radio" name="degreeType" value="si" style="margin-left: 4px"/>  Celsius
+                    </div>
+                </div>
+            </div>
+            <div class="form-group col-xs-12 col-md-3" align="right">
+                <div class="row" style="padding-right: 8px">
+                    <div class="form-group hidden-xs col-md-12" style="height: 12px"></div>
+                    <div class="form-group col-xs-12 col-md-12">
+                        <button type="submit" class="btn btn-primary">
+                            <span class="glyphicon glyphicon-search"></span>
+                            Search
+                        </button>
+                        <button onclick="resetResult(this.form)" type="reset" class="btn btn-default">
+                            <span class="glyphicon glyphicon-refresh"></span>
+                            Clear
+                        </button>
+                    </div>
+                    <div class="col-xs-12 col-md-12">
+                        <span>Powered by: </span>
+                        <a href="http://forecast.io">
+                            <image height="48px" src="/forecast/static/images/forecast_logo.png"></image>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<hr style="margin: 2% 4% 2% 4%;"/>
+
+<div id="result" style="margin: 0 5% 5% 5%;display: none">
+    <ul class="nav nav-tabs" id="resultTab">
+        <li class="active"><a data-toggle="tab" href="#now">Right Now</a></li>
+        <li><a data-toggle="tab" href="#hours">Next 24 hours</a></li>
+        <li><a data-toggle="tab" href="#days">Next 7 Days</a></li>
+    </ul>
+
+    <div class="tab-content">
+        <div id="now" class="tab-pane fade in active container-fluid">
+            <div class="row">
+                <!--For the weather information table-->
+                <div class="col-xs-12 col-md-6">
+                    <div class="row" style="background-color: #D46A6A">
+                        <!--For the weather icon-->
+                        <div class="col-xs-12 col-md-6" align="center" style="padding: 10px">
+                            <image id="nowIcon" src="" width="180px" height="180px"></image>
+                        </div>
+                        <!--For the temperature information-->
+                        <div class="col-xs-12 col-md-6" align="center">
+                            <div class="row">
+                                <div>
+                                    <span id="nowSummary"></span><span id="nowLocation"></span>
+                                </div>
+                                <div clearfix></div>
+                                <div class="col-xs-12 col-md-12">
+                                    <span id="nowTemp" style="text-align: center"></span>
+                                    <span class="degreeType" style="position: relative;top: -72px;font-size: 24px"></span>
+                                </div>
+                                <div class="col-xs-12 col-md-12" style="vertical-align: bottom">
+                                    <span id="nowRange"></span>
+                                    <a href="javascript:return false;" onclick="fbPost()">
+                                        <image src="/forecast/static/images/fb_icon.png" align="right" height="30px" width="30px"
+                                               style="position: relative;bottom: 12px"/>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="clearfix"></div>
+
+                        <div class="col-xs-6 col-md-6 odd">Precipitation</div>
+                        <div class="col-xs-6 col-md-6 odd" id="nowPc"></div>
+                        <div class="col-xs-6 col-md-6 even">Chance of Rain</div>
+                        <div class="col-xs-6 col-md-6 even" id="nowChanceRain"></div>
+                        <div class="col-xs-6 col-md-6 odd">Wind Speed</div>
+                        <div class="col-xs-6 col-md-6 odd" id="nowWindSpeed"></div>
+                        <div class="col-xs-6 col-md-6 even">Dew Point</div>
+                        <div class="col-xs-6 col-md-6 even" id="nowDewPoint"></div>
+                        <div class="col-xs-6 col-md-6 odd">Humidity</div>
+                        <div class="col-xs-6 col-md-6 odd" id="nowHumidity"></div>
+                        <div class="col-xs-6 col-md-6 even">Visibility</div>
+                        <div class="col-xs-6 col-md-6 even" id="nowVisibility"></div>
+                        <div class="col-xs-6 col-md-6 odd">Sunrise</div>
+                        <div class="col-xs-6 col-md-6 odd" id="nowSunrise"></div>
+                        <div class="col-xs-6 col-md-6 even">Sunset</div>
+                        <div class="col-xs-6 col-md-6 even" id="nowSunset"></div>
+
+                    </div>
+                </div>
+                <div id="map" class="col-xs-12 col-md-6">
+                </div>
+
+            </div>
+
+        </div>
+
+        <div id="hours" class="tab-pane fade">
+            <div class="table-reponsive">
+                <table id="nextHours" class="table table-hover" style="text-align: center;background-color: white;color: black;">
+                </table>
+            </div>
+        </div>
+
+        <div id= "days" class="tab-pane fade container-fluid" style="text-align: center;background-color: #333">
+            <div id="daysRow" class="row">
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
