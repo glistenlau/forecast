@@ -166,7 +166,7 @@ var setNow = function (data, degreeType) {
         mapInit();
     }
     lonlat = new OpenLayers.LonLat(data.longitude, data.latitude);
-    map.setCenter(lonlat.transform('EPSG:4326', 'EPSG:3857'), 10);
+    map.setCenter(lonlat.transform('EPSG:4326', 'EPSG:3857'), 6);
 };
 
 var setNextHours = function (data, degreeType) {
