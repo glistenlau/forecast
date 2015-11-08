@@ -143,7 +143,7 @@ var setNow = function (data, degreeType) {
     nowInfo.push((data.currently.precipProbability * 100) + "%");
     nowInfo.push(parseInt(data.currently.windSpeed) + (degreeType === "us" ? " mph" : " m/s"));
     nowInfo.push(parseInt(data.currently.dewPoint) + (degreeType === "us" ? " ºF" : " ºC"));
-    nowInfo.push((data.currently.humidity * 100) + "%");
+    nowInfo.push(parseInt(data.currently.humidity * 100) + "%");
     nowInfo.push(parseInt(data.currently.visibility) + (degreeType === "us" ? " mi" : " km"));
     nowInfo.push(getTime(data.daily.data[0].sunriseTime));
     nowInfo.push(getTime(data.daily.data[0].sunsetTime));
@@ -460,7 +460,7 @@ var fbPost = function() {
         name: 'Current Weather' + $('#nowLocation').text(),
         picture: $('#nowIcon').prop('src'),
         description: $('#nowSummary').text() + ' ' + $('#nowTemp').text() + $('.degreeType').text().substring(0, 2),
-        caption: 'WEATHER INFOMATION FROM FORECAST.IO',
+        caption: 'WEATHER INFOMATION FROM FORECAST.IO'
     }, function(response){
         // Debug response (optional)
         console.log(response);
