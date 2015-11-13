@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bcaeedb5-d63b-498c-8be9-db76cc5c4764" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/demo/forecast_demo.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/demo/futureWeather.gif" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/facebookFeed.gif" afterPath="$PROJECT_DIR$/demo/facebookFeed.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/weatherMap.gif" afterPath="$PROJECT_DIR$/demo/weatherMap.gif" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Forecast.iws" />

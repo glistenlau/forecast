@@ -37,8 +37,9 @@ Bootstrap was applied on front end to build a sleek, intuitive and mobile device
 ##Demo
 
 ![](https://github.com/glistenlau/forecast/raw/master/demo/inputValidation.gif)
-![](https://github.com/glistenlau/forecast/raw/master/demo/weather_demo.gif)
-![](https://github.com/glistenlau/forecast/raw/master/demo/facebook_demo.gif)
-![](https://github.com/glistenlau/forecast/raw/master/demo/remain_demo.gif)
+![](https://github.com/glistenlau/forecast/raw/master/demo/facebookFeed.gif)
+![](https://github.com/glistenlau/forecast/raw/master/demo/weatherMap.gif)
+![](https://github.com/glistenlau/forecast/raw/master/demo/nextHours.gif)
+![](https://github.com/glistenlau/forecast/raw/master/demo/nextDays.gif)
 
 
