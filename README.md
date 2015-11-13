@@ -1,32 +1,44 @@
-# Forecast Search
----
+#Forecast Search
 
-Forecast Search is a weather forecast search web application provide an interface to perform weather forecast search
- and post details to Facebook. Node.js is used on the server side to provide RESTful API for web and mobile applications. 
+Forecast Search is a weather forecast search web application provide an interface to perform weather forecast search and share weather information to Facebook.
  
- This web application has been deployed on [The Amazon Web Services(AWS)](https://aws.amazon.com/): 
+ This web application has been deployed on **Amazon Web Services(AWS)**: 
  [http://glistenlau.com/forecast/](http://glistenlau.com/forecast/).
  
-# Applied APIs and Libraries
----
+##Applied technology stacks and APIs
 
-[The Google Maps Geocoding API](https://developers.google.com/maps/documentation/geocoding/intro)
+###[Node.js](https://nodejs.org/en/)
 
-[The Dark Sky Forecast API](https://developer.forecast.io/)
+The server side was built to provide RESTful web service for web and mobile applications using Node.js, which uses an efficient event-driven, non-blocking I/O model.
+###[jQuery](https://jquery.com/)
 
-[OpenLayers 3 API](http://openlayers.org/)
+jQuery was applied on the front-end to validate inputs, manipulate HTML DOM, handle event and Perform Ajax.
 
-[OnpenWeatherMap API](http://openlayers.org/)
+###[The Google Maps Geocoding API](https://developers.google.com/maps/documentation/geocoding/intro)
 
-[Bootstrap Library](http://getbootstrap.com/)
+The Google Maps Geocoding API was used to convert addresses (like "1600 Amphitheatre Parkway, Mountain View, CA") into geographic coordinates (like latitude 37.423021 and longitude -122.083739).
 
-[Facebook SDK for JavaScript](https://developers.facebook.com/docs/javascript/)
+###[The Dark Sky Forecast API](https://developer.forecast.io/)
 
-[jQuery](https://jquery.com/)
+The Dark Sky Forecast API provides the current and future weather infomation for a geoparphic coordinates.
+
+###[Facebook SDK for JavaScript](https://developers.facebook.com/docs/javascript/)
+
+Facebook SDK for JavaScript helps adding Facebook Login and Feed on the client-side.
+
+###[OpenLayers API](http://openlayers.org/) & [OnpenWeatherMap API](http://openlayers.org/)
+
+OpenWeatherMap API provides precipitation and clouds weather map layers, which was used in OpenLayers.
+
+###[Bootstrap](http://getbootstrap.com/)
+
+Bootstrap was applied on front end to build a sleek, intuitive and mobile device friendly website interfaces.
+
+##Demo
+
+![](https://github.com/glistenlau/forecast/raw/master/demo/inputValidation.gif)
+![](https://github.com/glistenlau/forecast/raw/master/demo/weather_demo.gif)
+![](https://github.com/glistenlau/forecast/raw/master/demo/facebook_demo.gif)
+![](https://github.com/glistenlau/forecast/raw/master/demo/remain_demo.gif)
 
 
-
-![](https://github.com/glistenlau/forecast/raw/master/forecast/static/images/form_validation.gif)
-![](https://github.com/glistenlau/forecast/raw/master/forecast/static/images/weather_demo.gif)
-![](https://github.com/glistenlau/forecast/raw/master/forecast/static/images/facebook_demo.gif)
-![](https://github.com/glistenlau/forecast/raw/master/forecast/static/images/remain_demo.gif)
