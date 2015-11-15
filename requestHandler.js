@@ -6,6 +6,7 @@
 
 let GOOGLE_KEY;
 let FORECAST_KEY;
+let FACEBOOK_APPID;
 var fs = require('fs');
 var https = require('https');
 var xml2js = require('xml2js');
@@ -24,6 +25,7 @@ var readKeys = function(callback) {
 readKeys(function(err, keys) {
     GOOGLE_KEY = keys.GOOGLE_KEY;
     FORECAST_KEY = keys.FORECAST_KEY;
+    FACEBOOK_APPID = keys.FACEBOOK_APPID;
 });
 
 exports.handleStatic = function(pathname, callback) {
@@ -134,7 +136,8 @@ var queryForecast = function(infoDict, location, callback) {
 
         res.on('end', function() {
             //let weather = JSON.parse(jsonStr);
-            jsonStr = '{' + '"address":"' + location.address + '",' + jsonStr.substring(1);
+            jsonStr = '{"address":"' + location.address + '", "FACEBOOK_APPID":"' + FACEBOOK_APPID + '",'
+                + jsonStr.substring(1);
             callback(null, jsonStr);
         });
     }).on("error", function(err) {

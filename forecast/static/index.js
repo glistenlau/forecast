@@ -355,6 +355,17 @@ $.validator.setDefaults({
             var degreeType = $("input[name=degreeType]:checked", "#searchForm").val();
             var address = data.address.split(',');
 
+            FACEBOOK_APPID = data.FACEBOOK_APPID;
+            // load facebook SDK
+            $.ajaxSetup({ cache: true });
+            $.getScript('//connect.facebook.net/en_US/sdk.js', function(){
+                FB.init({
+                    appId      : FACEBOOK_APPID,
+                    xfbml      : true,
+                    version    : 'v2.5'
+                });
+            });
+
             // get the location information
             if (address.length - 2 >= 0) {
                 var temp = address[address.length - 2].split(' ');
@@ -387,6 +398,7 @@ $.validator.addMethod("noEmptyInput", function (value, element, params) {
 });
 
 var map = null;
+var FACEBOOK_APPID = '';
 // check the validation of form
 $(document).ready(function () {
     $("#searchForm").validate({
@@ -402,15 +414,7 @@ $(document).ready(function () {
         }
     });
 
-    // load facebook SDK
-    $.ajaxSetup({ cache: true });
-    $.getScript('//connect.facebook.net/en_US/sdk.js', function(){
-        FB.init({
-            appId      : '886824564747949',
-            xfbml      : true,
-            version    : 'v2.5'
-        });
-    });
+
 });
 
 var mapInit = function() {
