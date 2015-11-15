@@ -44,10 +44,11 @@ If the user did not enter a street address, city and/or state, then a message wi
 ###Right Now Tab
 ![](https://github.com/glistenlau/forecast/raw/master/demo/weatherMap.gif)
 This area is divided into two sections: Current Weather Table and Cloud Map.
-####Current Weather Table
+
+#####Current Weather Table
 To the left, the current weather data is displayed. The top part consists for two subsections with background color. The left subsection displays the icon image whereas the right subsection displays the "current" weather condition and location, current temperature and High/Low temperature for the day. The table below it displays additional weather data.
 
-####Cloud Map
+#####Cloud Map
 To the right, the cloud map is displayed.
 
 ###Facebook post
