@@ -15,7 +15,7 @@ $ npm install
 In this website, [The Google Maps Geocoding API](https://developers.google.com/maps/documentation/geocoding/intro), [The Dark Sky Forecast API](https://developer.forecast.io/) and [Facebook SDK for JavaScript](https://developers.facebook.com/docs/javascript/) are used, so developer keys for these three API are required, after got the keys, create a "keys.json" file under the "exclude" folder.
 
 ```bash
-"/exclude/keys.json"
+$ vi ./exclude/keys.json
 ```
 
 ```js
@@ -30,7 +30,7 @@ Run:
 ```bash
 $ node app.js
 ```
-Now you can get the 
+Now Forecast Search is ready on [http://localhost:3000/forecast/](http://localhost:3000/forecast/).
 
  
 ##Applied Technology Stacks and APIs
