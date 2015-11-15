@@ -65,6 +65,7 @@ If a particular column is clicked, it will display a modal window.
 
 ###Response to Devices
 ![](https://github.com/glistenlau/forecast/raw/master/demo/mobile.gif)
+
 If the page is loading on a smart phone or a tablet, the form will display according to the width of the devices.
 
 
