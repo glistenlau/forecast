@@ -5,7 +5,7 @@ Forecast Search is a weather forecast search web application provide an interfac
  This web application has been deployed on **Amazon Web Services(AWS)**: 
  [http://glistenlau.com/forecast/](http://glistenlau.com/forecast/).
  
-##Applied technology stacks and APIs
+##Applied Technology Stacks and APIs
 
 ###[Node.js](https://nodejs.org/en/)
 
@@ -37,9 +37,21 @@ Bootstrap was applied on front end to build a sleek, intuitive and mobile device
 ##Demo
 
 ![](https://github.com/glistenlau/forecast/raw/master/demo/inputValidation.gif)
+Used jQuery to validate the form input.
+
 ![](https://github.com/glistenlau/forecast/raw/master/demo/facebookFeed.gif)
+Login and post weather to Facebook.
+
 ![](https://github.com/glistenlau/forecast/raw/master/demo/weatherMap.gif)
+Show precipitation and clouds map.
+
 ![](https://github.com/glistenlau/forecast/raw/master/demo/nextHours.gif)
+Weather information for next 24 hours.
+
 ![](https://github.com/glistenlau/forecast/raw/master/demo/nextDays.gif)
+Weather information for next 7 days.
+
+![](https://github.com/glistenlau/forecast/raw/master/demo/mobile.gif)
+Web view on mobile device.
 
 

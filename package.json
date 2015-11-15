@@ -1,16 +1,19 @@
 {
-  "name": "forecast",
+  "name": "glistenlau",
   "version": "1.0.0",
-  "description": "weather forecast severice",
+  "description": "Weather Forecast Search Website",
   "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "dependencies": {
+    "xml2js": "^0.4.15"
   },
   "keywords": [
-    "node.js",
     "weather",
     "forecast"
   ],
-  "author": "Yi Liu",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/glistenlau/forecast"
+  },
+  "author": "glistenlau <glistenlau@gmail.com>",
   "license": "ISC"
 }
