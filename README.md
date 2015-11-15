@@ -5,6 +5,34 @@ Forecast Search is a weather forecast search web application provide an interfac
  This web application has been deployed on **Amazon Web Services(AWS)**: 
  [http://glistenlau.com/forecast/](http://glistenlau.com/forecast/).
  
+##How to Setup
+You need to extract the zip package, and type the command below to install.
+
+```bash
+$ npm install
+```
+
+In this website, [The Google Maps Geocoding API](https://developers.google.com/maps/documentation/geocoding/intro), [The Dark Sky Forecast API](https://developer.forecast.io/) and [Facebook SDK for JavaScript](https://developers.facebook.com/docs/javascript/) are used, so developer keys for these three API are required, after got the keys, create a "keys.json" file under the "exclude" folder.
+
+```bash
+"/exclude/keys.json"
+```
+
+```js
+{
+  "GOOGLE_KEY": YOUR_GOOGLE_KEY,
+  "FORECAST_KEY": YOUR_FORECASTIO_KEY,
+  "FACEBOOK_APPID": YOUR_FACEBOOK_APPID
+}
+```
+Run:
+
+```bash
+$ node app.js
+```
+Now you can get the 
+
+ 
 ##Applied Technology Stacks and APIs
 
 ###[Node.js](https://nodejs.org/en/)
