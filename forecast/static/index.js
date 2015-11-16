@@ -30,16 +30,16 @@ var getIcon = function (icon) {
 };
 
 var getPrecipitation = function (pi) {
-    if (pi === 0) {
-        return "None";
-    } else if (pi === 0.002) {
-        return "Very Light";
-    } else if (pi === 0.017) {
-        return "Light";
-    } else if (pi === 0.1) {
-        return "Moderate";
-    } else {
+    if (pi >= 0.4) {
         return "Heavy";
+    } else if (pi >= 0.1) {
+        return "Moderate";
+    } else if (pi >= 0.017) {
+        return "Light";
+    } else if (pi >= 0.002) {
+        return "Very Light";
+    } else {
+        return "None";
     }
 };
 
