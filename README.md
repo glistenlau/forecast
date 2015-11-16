@@ -66,10 +66,12 @@ Bootstrap was applied on front end to build a sleek, intuitive and mobile device
 
 ###Validation
 ![](https://googledrive.com/host/0B6oQwX6qlmnZMS0yano1MTg2NWc)
+
 If the user did not enter a street address, city and/or state, then a message will be shown with appropriate text requesting the user to provide the missing information.
 
 ###Right Now Tab
 ![](https://googledrive.com/host/0B6oQwX6qlmnZNnR3WkNVQk5UMlE)
+
 This area is divided into two sections: Current Weather Table and Cloud Map.
 
 #####Current Weather Table
@@ -80,19 +82,23 @@ To the right, the cloud map is displayed.
 
 ###Facebook post
 ![](https://googledrive.com/host/0B6oQwX6qlmnZa3hBU2V5UW81cDA/)
+
 On click of the Facebook post button, there will be a popup to authorize the user to Facebook if the user is not already logged in to Facebook. And then a feed can be posted.
 
 ###Next 24 Hours Tab
 ![](https://googledrive.com/host/0B6oQwX6qlmnZbWFuRlBIZFZmbnM)
+
 This tab displays the weather information for the next 24 hours.
 
 ###Next 7 Days Tab
 ![](https://googledrive.com/host/0B6oQwX6qlmnZNWRiajhIQVRXc0E)
+
 This tab displays the forecast for the next 7 days. 
 If a particular column is clicked, it will display a modal window.
 
 ###Response to Devices
 ![](https://googledrive.com/host/0B6oQwX6qlmnZdmVhVDkzYmpwcms)
+
 If the page is loading on a smart phone or a tablet, the form will bedisplay according to the width of the devices.
 
 
